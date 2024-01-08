@@ -1,0 +1,31 @@
+.main-visual-image {
+  background-image: url('EmmetQuickCoder-mv4.png');
+  height: 100vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.main-texts {
+  position: fixed;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.main-texts h1 {
+  font-size: 5rem;
+  font-weight: 600;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+.main-texts p {
+  font-size: 1.5rem;
+  text-shadow: 0 0 5px #00ffff;
+}

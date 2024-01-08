@@ -1,0 +1,21 @@
+.login-register-btn {
+  color: #00ffff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 10px 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid #00ffff;
+  border-radius: 30px;
+  margin-top: 10px;
+  box-shadow: 0 0 2px #00ffff;
+  transition: all 0.3s;
+  backdrop-filter: blur(2px);
+}
+.login-register-btn:hover {
+  color: white;
+  text-shadow: 0 0 1px white;
+  background-color: rgba(0, 255, 255, 0.4);
+  border: 1px solid #fff;
+  box-shadow: 0 0 8px #fff;
+  backdrop-filter: blur(2px);
+}

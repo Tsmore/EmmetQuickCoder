@@ -1,0 +1,37 @@
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <%= form_with model: @user, url: user_session_path, method: :post do |f| %>
+        <div class="modal-header">
+          <h5 class="modal-title">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <%= f.label :username, class: "form-label" %>
+            <%= f.text_field :username, id: "login_username", autofocus: true, autocomplete: "username", class: "form-control" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :password, class: "form-label" %>
+            <%= f.password_field :password, id: "login_password", autocomplete: "current-password", class: "form-control" %>
+          </div>
+          <% if @devise_mapping.rememberable? %>
+            <div class="remember-forgot">
+              <%= f.check_box :remember_me %>
+              <%= f.label :remember_me %>
+              <% if @devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to "Forgot your password?", new_password_path(@resource_name) %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <%= f.submit "ログイン", class: "login-btn" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

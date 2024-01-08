@@ -8,6 +8,8 @@
         <p>Emmet記法を学んで爆速コーディング！</p>
         <button class="login-register-btn" data-toggle="modal" data-target="#loginModal">Log in</button>
         <button class="login-register-btn" data-toggle="modal" data-target="#registerModal">Registration</button>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete if user_signed_in? %>
+        <%= render 'public/shared/error_messages', resource: @user %>
       </div>
     </div>
   </div>

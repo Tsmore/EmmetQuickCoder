@@ -4,7 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # 紐づけ
+  has_many :user_progresses, dependent: :destroy
+
   # バリデーションコーナー
   validates :username, presence: true, uniqueness: { case_sensitive: false }
-  validates :email, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
 end

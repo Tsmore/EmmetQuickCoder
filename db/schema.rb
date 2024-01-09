@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_01_07_145602) do
+ActiveRecord::Schema.define(version: 2024_01_09_054227) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -51,6 +51,34 @@ ActiveRecord::Schema.define(version: 2024_01_07_145602) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "lesson_pages", force: :cascade do |t|
+    t.integer "lesson_id"
+    t.text "content"
+    t.integer "page_number"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_lesson_pages_on_lesson_id"
+  end
+
+  create_table "lessons", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "difficulty"
+    t.integer "level"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_progresses", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "lesson_id"
+    t.integer "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lesson_id"], name: "index_user_progresses_on_lesson_id"
+    t.index ["user_id"], name: "index_user_progresses_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,5 +1,5 @@
 <div class="container">
-  <!--進捗具合、プロフィール画像、トロフィー？の表示などなど-->
+  <!--プロフィール画像、トロフィー-->
   <div class="row mt-5">
     <div class="col-lg-4 col-md-4">
       <div class="row">
@@ -37,17 +37,43 @@
       </div>
     </div>
   </div>
+  <!--進捗具合-->
   <div class="row mt-5">
     <h3>Lessonを続ける</h3>
   </div>
   <div class="row mt-3">
-    <div class="col-12">
-      <p>Lessonのレベル、進捗状況、続けるボタン</p>
+    <div class="col-lg-4 col-md-4">
+      <div class="card lesson-card">
+        <div class="card-header">
+          <h3>Intermediate</h3>
+          <h5>Lesson3</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <%= image_tag 'intermediate1.png', class: "lesson-images" %>
+          </p>
+          <p class="card-text">
+            現在進行系のレッスン表示。
+            終わってたら次のレッスン表示。
+          </p>
+          <p class="card-text text-right">
+            <%= link_to "続ける", "#" %>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 offset-lg-1 col-md-7 offset-md-1">
+      <p>ここに進捗具合</p>
+      <p>初級編100％</p>
+      <p>中級編50%</p>
+      <p>みたいな感じで</p>
     </div>
   </div>
+  <!--レッスン一覧-->
   <div class="row mt-5">
     <h3><%= link_to "All Lessons", lessons_path %></h3>
   </div>
+  <!--初級編-->
   <div class="row mt-3">
     <div class="col-12">
       <h4><%= link_to "Beginner", beginner_lessons_path %></h4>
@@ -130,6 +156,7 @@
       </div>
     </div>
   </div>
+  <!--中級編-->
   <div class="row mt-3">
     <div class="col-12">
       <h4><%= link_to "Intermediate", intermediate_lessons_path %></h4>
@@ -159,6 +186,7 @@
       </div>
     </div>
   </div>
+  <!--上級編-->
   <div class="row mt-3 mb-5">
     <div class="col-12">
       <h4><%= link_to "Advanced", advanced_lessons_path %></h4>

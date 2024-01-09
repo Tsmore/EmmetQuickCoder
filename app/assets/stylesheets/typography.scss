@@ -30,3 +30,37 @@
   width: 100%;
   height: auto;
 }
+
+.logo-image {
+  width: 70px;
+  height: auto;
+  margin-right: 10px;
+}
+
+// Header Settings
+
+.navbar {
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+.dropdown-item:hover {
+  background-color: transparent !important;
+}
+
+.navbar-brand {
+  font-size: 1.4rem !important;
+  font-weight: 500;
+}
+
+.navbar a {
+  color: #fff;
+  font-size: 1.1rem;
+}
+.navbar a:hover {
+  color: #fff;
+  text-shadow: 0 0 1px #00ffff;
+}

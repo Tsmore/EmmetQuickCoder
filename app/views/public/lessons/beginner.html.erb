@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row mt-5">
+    <h2>Beginner</h2>
+  </div>
+  <div class="row my-3">
+    <!--@lessonsでeach文予定-->
+    <div class="col-lg-4 col-md-6">
+      <div class="card lesson-card">
+        <div class="card-header">
+          <h3>Beginner</h3>
+          <h5>Lesson1</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">
+            <%= image_tag 'beginner1.png', class: "lesson-images" %>
+          </p>
+          <p class="card-text">
+            ここにレッスン内容。
+            大体３〜４行くらい？
+            カード全体をリンクにするか始めるボタン？
+            タイトル押したらどうする？
+            使用ロゴは背景透過で
+          </p>
+          <p class="card-text text-right">
+            <%= link_to "はじめる", "#" %> /
+            <%= link_to "続ける", "#" %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

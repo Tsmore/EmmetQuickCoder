@@ -13,6 +13,9 @@ devise_for :users, controllers: {
     resources :users, only: [:show, :update, :destroy] do
       resources :user_progresses, only: [:create, :update]
     end
+    get 'lessons/beginner', to: 'lessons#beginner', as: 'beginner_lessons'
+    get 'lessons/intermediate', to: 'lessons#intermediate', as: 'intermediate_lessons'
+    get 'lessons/advanced', to: 'lessons#advanced', as: 'advanced_lessons'
     resources :lessons, only: [:index, :show]
   end
 

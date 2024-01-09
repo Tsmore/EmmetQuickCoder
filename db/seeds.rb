@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+admin = Admin.find_or_initialize_by(
+  username: ENV['ADMIN_USERNAME'],
+  email: ENV['ADMIN_EMAIL'],
+)
+
+if admin.new_record?
+  admin.password = ENV['ADMIN_PASSWORD']
+  admin.save!
+end

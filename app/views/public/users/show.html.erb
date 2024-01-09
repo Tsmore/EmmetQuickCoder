@@ -16,24 +16,106 @@
         </h2>
       </div>
       <div class="row mt-3">
-        <div class="col-4">
-          <div class="card trophy-card">
-            <%= image_tag 'gold-trophy', class: "torophy-images" %>
+        <h4>初級編</h4>
+      </div>
+      <div class="row trophy-row mt-1">
+        <% if @user.gold_trophy_earned_beginner? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'gold-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Gold</h5>
           </div>
-          <h5 class="text-center">Gold</h5>
-        </div>
-        <div class="col-4">
-          <div class="card trophy-card">
-            <%= image_tag 'silver-trophy', class: "torophy-images" %>
+        <% end %>
+        <% if @user.silver_trophy_earned_beginner? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'silver-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Silver</h5>
           </div>
-          <h5 class="text-center">Silver</h5>
-        </div>
-        <div class="col-4">
-          <div class="card trophy-card">
-            <%= image_tag 'bronze-trophy', class: "torophy-images" %>
+        <% end %>
+        <% if @user.bronze_trophy_earned_beginner? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'bronze-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Bronze</h5>
           </div>
-          <h5 class="text-center">Bronze</h5>
-        </div>
+        <% end %>
+        <% if @user.gold_trophy_earned_beginner?.blank? && @user.silver_trophy_earned_beginner?.blank? && @user.bronze_trophy_earned_beginner?.blank? %>
+          <div class="col-12">
+            <p class="text-center trophy-m">レッスンを進めてトロフィーを獲得しよう！</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="row mt-3">
+        <h4>中級編</h4>
+      </div>
+      <div class="row trophy-row mt-1">
+        <% if @user.gold_trophy_earned_intermediate? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'gold-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Gold</h5>
+          </div>
+        <% end %>
+        <% if @user.silver_trophy_earned_intermediate? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'silver-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Silver</h5>
+          </div>
+        <% end %>
+        <% if @user.bronze_trophy_earned_intermediate? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'bronze-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Bronze</h5>
+          </div>
+        <% end %>
+        <% if @user.gold_trophy_earned_intermediate?.blank? && @user.silver_trophy_earned_intermediate?.blank? && @user.bronze_trophy_earned_intermediate?.blank? %>
+          <div class="col-12">
+            <p class="text-center trophy-m">レッスンを進めてトロフィーを獲得しよう！</p>
+          </div>
+        <% end %>
+      </div>
+      <div class="row mt-3">
+        <h4>上級編</h4>
+      </div>
+      <div class="row trophy-row mt-1">
+        <% if @user.gold_trophy_earned_advanced? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'gold-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Gold</h5>
+          </div>
+        <% end %>
+        <% if @user.silver_trophy_earned_advanced? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'silver-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Silver</h5>
+          </div>
+        <% end %>
+        <% if @user.bronze_trophy_earned_advanced? %>
+          <div class="col-4">
+            <div class="card trophy-card">
+              <%= image_tag 'bronze-trophy', class: "torophy-images" %>
+            </div>
+            <h5 class="text-center trophy-m">Bronze</h5>
+          </div>
+        <% end %>
+        <% if @user.gold_trophy_earned_advanced?.blank? && @user.silver_trophy_earned_advanced?.blank? && @user.bronze_trophy_earned_advanced?.blank? %>
+          <div class="col-12">
+            <p class="text-center trophy-m">レッスンを進めてトロフィーを獲得しよう！</p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

@@ -1,10 +1,6 @@
 Rails.application.routes.draw do
 
-
-  namespace :public do
-    get 'users/show'
-  end
-  devise_for :users, controllers: {
+devise_for :users, controllers: {
     registrations: "public/registrations",
     sessions: 'public/sessions'
   }
@@ -14,7 +10,16 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root to: 'homes#top'
-    resources :users, only: [:show, :update, :destroy]
+    resources :users, only: [:show, :update, :destroy] do
+      resources :user_progresses, only: [:create, :update]
+    end
+    resources :lessons, only: [:index, :show]
+  end
+
+  namespace :admin do
+    resources :users, only: [:index, :destroy]
+    resources :lessons
+    resources :lesson_pages
   end
 
 end

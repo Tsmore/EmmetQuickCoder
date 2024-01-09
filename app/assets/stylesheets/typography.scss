@@ -1,11 +1,17 @@
 // Card Settings
 
 .lesson-card {
+  border-radius: 20px !important;
   background-color: rgba(0, 0, 0, 0.3) !important;
+  transition: all 0.5s;
+}
+.lesson-card:hover {
+  box-shadow: 0 0 10px #00ffff !important;
 }
 
 .trophy-card {
   border-radius: 50% !important;
+  box-shadow: 0 0 3px 3px #00ffff !important;
 }
 
 

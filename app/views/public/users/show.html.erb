@@ -1,26 +1,203 @@
 <div class="container">
   <div class="row mt-5">
-    <h2>ようこそ<%= @user.username %>さん！</h2>
+    <h1>ようこそ<%= @user.username %>さん！</h1>
   </div>
-  <div class="row mt-5">
+  <div class="row mt-3">
     <div class="col-12">
       <p>ここにステータス、進捗具合、プロフィール画像、トロフィー？の表示</p>
     </div>
   </div>
   <div class="row mt-5">
-    <h4>Lessonを続ける</h4>
+    <h3>Lessonを続ける</h3>
   </div>
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-12">
       <p>Lessonのレベル、進捗状況、続けるボタン</p>
     </div>
   </div>
   <div class="row mt-5">
-    <h4>Lessom一覧</h4>
+    <h3>Lesson一覧</h3>
+    <p>beginner1~5,intermediate1~5,advanced1~5</p>
   </div>
-  <div class="row">
+  <div class="row mt-3">
     <div class="col-12">
-      <p>beginner1~5,intermediate1~5,advanced1~5</p>
+      <h3>Beginner</h3>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card lesson-card">
+            <div class="card-header">
+              <h3 class="card-title">
+                <%= link_to "Beginner", "#" %>
+              </h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'beginner1.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容。
+                大体３〜４行くらい？
+                カード全体をリンクにするか始めるボタン？
+                タイトル押したらどうする？
+                使用ロゴは背景透過で
+              </p>
+              <p class="card-text text-right">
+                <%= link_to "はじめる", "#" %> /
+                <%= link_to "続ける", "#" %>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Beginner</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'beginner.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Beginner</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'beginner.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <h4>Intermediate</h4>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Intermediate</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'intermediate1.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Intermediate</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'intermediate.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Intermediate</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'intermediate.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-12">
+      <h4>Advanced</h4>
+    </div>
+    <div class="col-12">
+      <div class="row">
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Advanced</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'advanced1.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Advanced</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'advanced.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+        <!--実際はeach文で５個分-->
+        <div class="col-4">
+          <div class="card">
+            <div class="card-header">
+              <h3>Advanced</h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text">
+                <%= image_tag 'advanced.png', class: "lesson-images" %>
+              </p>
+              <p class="card-text">
+                ここにレッスン内容
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

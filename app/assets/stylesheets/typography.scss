@@ -1,21 +1,32 @@
-// Card設定
+// Card Settings
 
 .lesson-card {
   background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
+.trophy-card {
+  border-radius: 50% !important;
+}
 
 
 
-.lesson-images {
+
+
+// Image Settings
+
+.profile-image {
+  width: 80%;
+  height: auto;
+  background-position: center;
+  object-fit: contain;
+}
+
+.torophy-images {
   width: 100%;
   height: auto;
 }
 
-// Profile
-.profile-image {
+.lesson-images {
   width: 100%;
   height: auto;
-  background-position: center;
-  object-fit: contain;
 }

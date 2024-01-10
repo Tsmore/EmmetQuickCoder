@@ -6,7 +6,7 @@
           <h2>Log in</h2>
         </div>
         <div class="card-body">
-          <%= form_with model: resource, url: admin_session_path do |f| %>
+          <%= form_with scope: :admin, url: admin_session_path do |f| %>
             <div class="form-group">
               <%= f.label :username, class: "form-label" %>
               <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>

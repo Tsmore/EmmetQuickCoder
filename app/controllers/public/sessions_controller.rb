@@ -3,7 +3,6 @@
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   before_action :set_devise_variables, only: [:new, :create]
-  before_action :configure_permitted_parameters
 
   def create
     self.resource = warden.authenticate(auth_options)

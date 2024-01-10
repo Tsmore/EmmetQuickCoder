@@ -2,7 +2,6 @@
 
 class Admin::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  before_action :configure_permitted_parameters
 
   # GET /resource/sign_in
   # def new
@@ -21,8 +20,8 @@ class Admin::SessionsController < Devise::SessionsController
 
   protected
 
-  def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:username])
+  def after_sign_in_path_for(resource)
+    root_path
   end
 
   # If you have extra params to permit, append them to the sanitizer.

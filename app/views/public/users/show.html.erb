@@ -6,7 +6,9 @@
         <h2>ようこそ<%= @user.username %>さん！</h2>
       </div>
       <div class="row">
-        <%= image_tag 'eqc-no-image.png', class: "profile-image" %>
+        <div class="col-12">
+          <%= image_tag 'eqc-no-image.png', class: "profile-image" %>
+        </div>
       </div>
     </div>
     <div class="col-lg-7 offset-lg-1 col-md-7 offset-md-1">

@@ -15,3 +15,12 @@ if admin.new_record?
   admin.password = ENV['ADMIN_PASSWORD']
   admin.save!
 end
+
+test = User.find_or_initialize_by(
+  username: "testuser",
+  email: "test@test.com",
+)
+if test.new_record?
+  test.password = "test1234"
+  test.save!
+end

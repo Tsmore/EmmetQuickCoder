@@ -2,7 +2,7 @@
 
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  before_action :set_devise_variables, only: [:new, :create]
+  before_action :configure_permitted_parameters
 
   def create
     self.resource = warden.authenticate(auth_options)
@@ -12,9 +12,6 @@ class Public::SessionsController < Devise::SessionsController
       yield resource if block_given?
       respond_with resource, location: after_sign_in_path_for(resource)
     else
-      if warden.message
-        Rails.logger.error "ログイン失敗: #{warden.message}"
-      end
       redirect_to root_path, alert: "ログインに失敗しました。"
     end
   end

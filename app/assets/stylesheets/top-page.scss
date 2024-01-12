@@ -7,11 +7,14 @@
   background-position: center;
 }
 
+.main-texts-container {
+  position: relative;
+}
+
 .main-texts {
-  position: fixed;
-  top: 45%;
+  position: absolute;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -210%);
   color: white;
   display: flex;
   align-items: center;

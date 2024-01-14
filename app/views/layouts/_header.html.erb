@@ -1,27 +1,77 @@
-<nav class="navbar navbar-expand-lg">
-  <%= image_tag 'eqc-logo.png', class: "logo-image" %>
-  <%= link_to "EmmetQuickCoder", root_path, class: "navbar-brand" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <% if user_signed_in? %>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <%= link_to "My Page(Home)", user_path(current_user), class: "nav-link" %>
+<header>
+  <% if user_signed_in? %>
+    <div class="navibar">
+      <div class="logo">
+        <%= image_tag 'eqc-logo.png', class: "logo-image" %>
+        <%= link_to "Emmet Quick Coder", root_path %>
+      </div>
+      <ul class="links">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "My Page", user_path(current_user) %></li>
+        <li><%= link_to "Emmet", root_path %></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+            Lesssons
+          </a>
+          <div class="dropdown-menu">
+            <%= link_to "Beginner", beginner_lessons_path, class: "dropdown-item" %>
+            <%= link_to "Intermediate", intermediate_lessons_path, class: "dropdown-item" %>
+            <%= link_to "Advanced", advanced_lessons_path, class: "dropdown-item" %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "All Lessons", lessons_path, class: "dropdown-item" %>
+          </div>
         </li>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      </ul>
+      <a class="search_btn">検索窓</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><%= link_to "ホーム", root_path %></li>
+      <li><%= link_to "マイページ", user_path(current_user) %></li>
+      <li><%= link_to "Emmet一覧", root_path %></li>
+      <li><%= link_to "レッスン", root_path %></li>
+      <li><%= link_to "問い合わせ", root_path %></li>
+      <li><a class="search_btn">検索窓</a></li>
+    </div>
+  <% elsif admin_signed_in? %>
+    <div class="navibar">
+      <div class="logo">
+        <%= image_tag 'eqc-logo.png', class: "logo-image" %>
+        <%= link_to "Emmet Quick Coder", root_path %>
+      </div>
+      <ul class="links">
+        <li><%= link_to "ダッシュボード", root_path %></li>
+        <li><%= link_to "ユーザー一覧", root_path %></li>
+        <li><%= link_to "Emmet一覧", root_path %></li>
+        <li><%= link_to "レッスン一覧", root_path %></li>
+        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+      </ul>
+      <a class="search_btn">検索窓</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><%= link_to "ダッシュボード", root_path %></li>
+        <li><%= link_to "ユーザー一覧", root_path %></li>
+        <li><%= link_to "Emmet一覧", root_path %></li>
+        <li><%= link_to "レッスン一覧", root_path %></li>
+        <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
+    </div>
+  <% else %>
+    <div class="navibar">
+      <div class="logo">
+        <%= image_tag 'eqc-logo.png', class: "logo-image" %>
+        <%= link_to "Emmet Quick Coder", root_path %>
+      </div>
+      <ul class="links">
+        <li><%= link_to "ホーム", root_path %></li>
+        <li><%= link_to "Emmet一覧", root_path %></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
             Lessons
           </a>
           <div class="dropdown-menu">
@@ -32,61 +82,18 @@
             <%= link_to "All Lessons", lessons_path, class: "dropdown-item" %>
           </div>
         </li>
+        <li><%= link_to "問い合わせ", root_path %></li>
       </ul>
-    <% elsif admin_signed_in? %>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Home", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Logout", destroy_admin_session_path, method: :delete, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            Lessons
-          </a>
-          <div class="dropdown-menu">
-            <%= link_to "Beginner", beginner_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Intermediate", intermediate_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Advanced", advanced_lessons_path, class: "dropdown-item" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "All Lessons", lessons_path, class: "dropdown-item" %>
-          </div>
-        </li>
-      </ul>
-    <% else %>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <%= link_to "Top Page", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Emmetの一覧", root_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Login", "#", class: "nav-link", "data-toggle" => "modal", "data-target" => "#loginModal" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "Registration", "#", class: "nav-link", "data-toggle" => "modal", "data-target" => "#registerModal" %>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            Lessons
-          </a>
-          <div class="dropdown-menu">
-            <%= link_to "Beginner", beginner_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Intermediate", intermediate_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Advanced", advanced_lessons_path, class: "dropdown-item" %>
-            <div class="dropdown-divider"></div>
-            <%= link_to "All Lessons", lessons_path, class: "dropdown-item" %>
-          </div>
-        </li>
-      </ul>
-    <% end %>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Emmetの検索" aria-label="Search">
-    </form>
-  </div>
-</nav>
+      <a class="search_btn">検索窓</a>
+      <div class="toggle_btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div class="dropdown_menu">
+      <li><%= link_to "マイページ", root_path %></li>
+      <li><%= link_to "Emmet一覧", root_path %></li>
+      <li><%= link_to "レッスン一覧", root_path %></li>
+      <li><a class="search_btn">検索窓</a></li>
+    </div>
+  <% end %>
+</header>

@@ -6,10 +6,12 @@
         <h1>EmmetQuickCoder</h1>
         <p>EmmetQuickCoderへようこそ！</p>
         <p>Emmet記法を学んで爆速コーディング！</p>
-        <button class="login-register-btn" data-toggle="modal" data-target="#loginModal">Log in</button>
-        <button class="login-register-btn" data-toggle="modal" data-target="#registerModal">Registration</button>
-        <%= link_to "Admin Login", new_admin_session_path, class: "btn btn-secondary" %>
-        <%= render 'public/shared/error_messages', resource: @user %>
+        <% unless user_signed_in? %>
+          <button class="login-register-btn" data-toggle="modal" data-target="#loginModal">Log in</button>
+          <button class="login-register-btn" data-toggle="modal" data-target="#registerModal">Registration</button>
+          <%= link_to "Admin Login", new_admin_session_path, class: "btn btn-secondary" %>
+          <%= render 'public/shared/error_messages', resource: @user %>
+        <% end %>
       </div>
     </div>
   </div>

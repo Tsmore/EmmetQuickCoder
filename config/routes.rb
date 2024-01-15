@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
+    get 'dashboard' => 'homes#top', as: 'dashboard'
     resources :users, only: [:index, :destroy]
     resources :lessons
     resources :lesson_pages

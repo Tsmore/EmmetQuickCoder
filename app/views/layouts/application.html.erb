@@ -23,13 +23,7 @@
 
   <body>
     <%= render 'layouts/header' %>
-    <% flash.each do |key, message| %>
-      <div class="flash <%= key %>">
-        <%= message %>
-      </div>
-    <% end %>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
-    <%= render 'public/homes/login_form' %>
-    <%= render 'public/homes/register_form' %>
   </body>
 </html>

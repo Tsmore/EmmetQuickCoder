@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     get 'lessons/intermediate', to: 'lessons#intermediate', as: 'intermediate_lessons'
     get 'lessons/advanced', to: 'lessons#advanced', as: 'advanced_lessons'
     resources :lessons, only: [:index, :show]
+    resources :emmet_snippets, only: [:index, :show]
   end
 
   namespace :admin do
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :destroy]
     resources :lessons
     resources :lesson_pages
+    resources :emmet_snippets
   end
 
 end

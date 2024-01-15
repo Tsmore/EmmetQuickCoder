@@ -1,0 +1,2 @@
+class EmmetSnippet < ApplicationRecord
+end

@@ -6,22 +6,21 @@
         <%= link_to "Emmet Quick Coder", root_path %>
       </div>
       <ul class="links">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "My Page", user_path(current_user) %></li>
-        <li><%= link_to "Emmet", root_path %></li>
+        <li><%= link_to "マイページ", user_path(current_user) %></li>
+        <li><%= link_to "Emmet構文", emmet_snippets_path %></li>
         <li class="dropdown">
           <a class="dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            Lesssons
+            レッスン
           </a>
           <div class="dropdown-menu">
-            <%= link_to "Beginner", beginner_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Intermediate", intermediate_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Advanced", advanced_lessons_path, class: "dropdown-item" %>
+            <%= link_to "初級編", beginner_lessons_path, class: "dropdown-item" %>
+            <%= link_to "中級編", intermediate_lessons_path, class: "dropdown-item" %>
+            <%= link_to "上級編", advanced_lessons_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <%= link_to "All Lessons", lessons_path, class: "dropdown-item" %>
+            <%= link_to "すべてのレッスン", lessons_path, class: "dropdown-item" %>
           </div>
         </li>
-        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
       </ul>
       <a class="search_btn">検索窓</a>
       <div class="toggle_btn">
@@ -29,12 +28,12 @@
       </div>
     </div>
     <div class="dropdown_menu">
-      <li><%= link_to "ホーム", root_path %></li>
       <li><%= link_to "マイページ", user_path(current_user) %></li>
-      <li><%= link_to "Emmet一覧", root_path %></li>
-      <li><%= link_to "レッスン", root_path %></li>
+      <li><%= link_to "Emmet構文", emmet_snippets_path %></li>
+      <li><%= link_to "レッスン一覧", lessons_path %></li>
       <li><%= link_to "問い合わせ", root_path %></li>
       <li><a class="search_btn">検索窓</a></li>
+      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
     </div>
   <% elsif admin_signed_in? %>
     <div class="navibar">
@@ -45,7 +44,7 @@
       <ul class="links">
         <li><%= link_to "ダッシュボード", admin_dashboard_path %></li>
         <li><%= link_to "ユーザー一覧", admin_users_path %></li>
-        <li><%= link_to "Emmet一覧", root_path %></li>
+        <li><%= link_to "Emmet一覧", admin_emmet_snippets_path %></li>
         <li><%= link_to "レッスン一覧", admin_lessons_path %></li>
         <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
       </ul>
@@ -57,7 +56,7 @@
     <div class="dropdown_menu">
       <li><%= link_to "ダッシュボード", admin_dashboard_path %></li>
       <li><%= link_to "ユーザー一覧", admin_users_path %></li>
-      <li><%= link_to "Emmet一覧", root_path %></li>
+      <li><%= link_to "Emmet一覧", admin_emmet_snippets_path %></li>
       <li><%= link_to "レッスン一覧", admin_lessons_path %></li>
       <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete %></li>
     </div>
@@ -69,17 +68,17 @@
       </div>
       <ul class="links">
         <li><%= link_to "ホーム", root_path %></li>
-        <li><%= link_to "Emmet一覧", root_path %></li>
+        <li><%= link_to "Emmet一覧", emmet_snippets_path %></li>
         <li class="dropdown">
           <a class="dropdown-toggle active" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            Lessons
+            レッスン
           </a>
           <div class="dropdown-menu">
-            <%= link_to "Beginner", beginner_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Intermediate", intermediate_lessons_path, class: "dropdown-item" %>
-            <%= link_to "Advanced", advanced_lessons_path, class: "dropdown-item" %>
+            <%= link_to "初級編", beginner_lessons_path, class: "dropdown-item" %>
+            <%= link_to "中級編", intermediate_lessons_path, class: "dropdown-item" %>
+            <%= link_to "上級編", advanced_lessons_path, class: "dropdown-item" %>
             <div class="dropdown-divider"></div>
-            <%= link_to "All Lessons", lessons_path, class: "dropdown-item" %>
+            <%= link_to "すべてのレッスン", lessons_path, class: "dropdown-item" %>
           </div>
         </li>
         <li><%= link_to "問い合わせ", root_path %></li>
@@ -90,9 +89,9 @@
       </div>
     </div>
     <div class="dropdown_menu">
-      <li><%= link_to "マイページ", root_path %></li>
-      <li><%= link_to "Emmet一覧", root_path %></li>
-      <li><%= link_to "レッスン一覧", root_path %></li>
+      <li><%= link_to "ホーム", root_path %></li>
+      <li><%= link_to "Emmet一覧", emmet_snippets_path %></li>
+      <li><%= link_to "レッスン一覧", lessons_path %></li>
       <li><a class="search_btn">検索窓</a></li>
     </div>
   <% end %>
